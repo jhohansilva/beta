@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/onsenui.css">
+    <link rel="stylesheet" href="../css/onsen-css-components.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <script src="../js/onsenui.min.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <ons-page>
+        <main>
+            <div class="content">
+                <ons-input id="username" type="text" modifier="underbar" placeholder="E-mail" float></ons-input>
+                <ons-input id="pass" type="password" modifier="underbar" placeholder="Clave" float></ons-input>
+                <ons-button id="enviar" modifier="large">Ingresar</ons-button>
+            </div>
+        </main>
+        <script>
+            ons.getScriptPage().onInit = function () {
+                $("#enviar").click(login);
+            };
+
+            function login(e) {
+                var username = $('#username').val();
+                var pass = $('#pass').val();
+
+                if (username.length < 1) {
+                    sendToast('Ingresa un correo!');
+                }else if(pass.length < 1){
+                    sendToast('Ingresa una contraseña!');
+                }
+            }
+
+            function sendToast(msg) {
+                ons.notification.toast(msg, { timeout: 1000, animation: 'ascend' })
+            }
+        </script>
+    </ons-page>
+</body>
+
+</html>
