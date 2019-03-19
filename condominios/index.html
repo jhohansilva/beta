@@ -470,7 +470,19 @@
         }
     </style>
 </body>
+<script type="text/javascript" src="cordova.js"></script>
 <script>
+    ons.ready(function () {
+        ons.setDefaultDeviceBackButtonListener(function (event) {
+            ons.notification.confirm('Do you want to close the app?') // Ask for confirmation
+                .then(function (index) {
+                    if (index === 1) { // OK button
+                        navigator.app.exitApp(); // Close the app
+                    }
+                });
+        });
+    });
+
     window.fn = {};
 
     window.fn.toggleMenu = function () {

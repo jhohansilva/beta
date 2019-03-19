@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <!-- OsenUi -->
     <link rel="stylesheet" href="../css/onsenui.css">
     <link rel="stylesheet" href="../css/onsen-css-components.min.css">
+    <script src="../js/onsenui.min.js"></script>        
     <link rel="stylesheet" href="css/global.css">
-    <script src="../js/onsenui.min.js"></script>
-    <script src="../js/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
     <ons-page>
         <main>
-            <div class="content">
+            <div class="content">                
                 <ons-input id="username" type="text" modifier="underbar" placeholder="E-mail" float></ons-input>
                 <ons-input id="pass" type="password" modifier="underbar" placeholder="Clave" float></ons-input>
                 <ons-button id="enviar" modifier="large">Ingresar</ons-button>
@@ -33,7 +34,7 @@
 
                 if (username.length < 1) {
                     sendToast('Ingresa un correo!');
-                }else if(pass.length < 1){
+                } else if (pass.length < 1) {
                     sendToast('Ingresa una contraseña!');
                 }
             }
